@@ -1,0 +1,356 @@
+// About Page Styles
+
+.about-page {
+  min-height: calc(100vh - 60px);
+  padding-top: var(--spacing-xl);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-lg);
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.about {
+  background: var(--beige-0);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+.about-text {
+  .lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  p {
+    line-height: 1.6;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-md);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.skills {
+  h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.skill-category {
+  h4 {
+    font-size: 1.125rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.skill-tag {
+  background: var(--beige-2);
+  color: var(--color-secondary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+// Experience Section
+.experience {
+  background: var(--beige-1);
+}
+
+.timeline {
+  margin-top: var(--spacing-xl);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+
+    @media (max-width: 768px) {
+      left: 15px;
+    }
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: var(--spacing-xl);
+
+  @media (max-width: 768px) {
+    padding-left: 45px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-border);
+  border: 3px solid var(--beige-1);
+
+  @media (max-width: 768px) {
+    left: 7px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.timeline-content {
+  background: var(--beige-0);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin: 0;
+  }
+}
+
+.company-info {
+  text-align: right;
+
+  @media (max-width: 768px) {
+    text-align: left;
+  }
+
+  .company {
+    display: block;
+    font-weight: 600;
+    color: var(--color-secondary);
+  }
+
+  .duration {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+  }
+
+  .location {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    font-weight: normal;
+    margin-top: 2px;
+  }
+}
+
+.role-description {
+  color: var(--color-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.achievements {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-md);
+
+  li {
+    color: var(--color-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xs);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+}
+
+.tech-tag {
+  background: var(--beige-2);
+  color: var(--color-secondary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+// Additional styles for company location and project sections
+.project-section {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border-light);
+
+  &:first-of-type {
+    margin-top: var(--spacing-md);
+  }
+
+  h4 {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .project-duration {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+// Education Section Styles
+.education {
+  background: var(--beige-1);
+}
+
+.education-timeline {
+  position: relative;
+  margin-top: var(--spacing-lg);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+
+    @media (max-width: 768px) {
+      left: 15px;
+    }
+  }
+}
+
+.education-item {
+  position: relative;
+  padding-left: 60px;
+
+  @media (max-width: 768px) {
+    padding-left: 45px;
+  }
+}
+
+.education-marker {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-border);
+  border: 3px solid var(--beige-1);
+
+  @media (max-width: 768px) {
+    left: 7px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.education-content {
+  background: var(--beige-0);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.education-header {
+  margin-bottom: var(--spacing-md);
+
+  h3 {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+  }
+}
+
+.institution-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  font-size: 0.9rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .institution {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  .duration {
+    color: var(--color-text-light);
+  }
+}
+
+.program-description {
+  color: var(--color-secondary);
+  line-height: 1.6;
+  margin: 0;
+}

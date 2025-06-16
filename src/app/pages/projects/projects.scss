@@ -1,0 +1,158 @@
+// Projects Page Styles
+
+.projects-page {
+  min-height: calc(100vh - 60px);
+}
+
+.projects-hero {
+  background: linear-gradient(135deg, var(--beige-0), var(--beige-1));
+  padding: var(--spacing-xl) 0;
+  margin-top: 60px; // Account for fixed header
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.page-description {
+  font-size: 1.125rem;
+  color: var(--color-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.projects-content {
+  background: var(--beige-0);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+.project-card {
+  background: var(--beige-0);
+  border-radius: var(--border-radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  height: 100%; // Ensure cards are equal height
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.project-header {
+  .project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .project-subtitle {
+    font-size: 1rem;
+    color: var(--color-secondary);
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+.project-description {
+  p {
+    color: var(--color-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+.project-features {
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      color: var(--color-secondary);
+      line-height: 1.5;
+      margin-bottom: var(--spacing-xs);
+      padding-left: var(--spacing-md);
+      position: relative;
+
+      &:before {
+        content: "•";
+        color: var(--color-border);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.tech-tag {
+  background: var(--beige-2);
+  color: var(--color-secondary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.project-links {
+  margin-top: auto; // Push to bottom of card
+  display: flex;
+  gap: var(--spacing-sm);
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    flex: 1;
+    justify-content: center;
+    min-width: 0; // Allow flex items to shrink
+
+    @media (max-width: 480px) {
+      padding: var(--spacing-xs) var(--spacing-sm);
+      font-size: 0.9rem;
+    }
+  }
+}

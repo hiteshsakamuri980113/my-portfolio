@@ -1,1 +1,258 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles*/
+
+// Import Google Fonts (using system fonts for performance)
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  //beige color palette
+  --beige-0: #fdf9ee;
+  --beige-1: #fdf6e3;
+  --beige-2: #eee8d5;
+  --beige-3: #ded4b2;
+  --beige-4: #c6ba93;
+
+  // Semantic colors using beige palette
+  --color-background: var(--beige-0);
+  --color-background-secondary: var(--beige-1);
+  --color-background-tertiary: var(--beige-2);
+  --color-primary: #2c3e50;
+  --color-secondary: #5d6d7e;
+  --color-text-light: #7f8c8d;
+  --color-border: var(--beige-3);
+  --color-border-light: var(--beige-2);
+  --color-border-hover: #2980b9;
+
+  // Typography
+  --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  // Spacing
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+
+  // Layout
+  --max-width: 1200px;
+  --border-radius: 8px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+// Reset and Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 60px; // Account for fixed header on all screen sizes
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+}
+h2 {
+  font-size: var(--font-size-3xl);
+}
+h3 {
+  font-size: var(--font-size-2xl);
+}
+h4 {
+  font-size: var(--font-size-xl);
+}
+h5 {
+  font-size: var(--font-size-lg);
+}
+h6 {
+  font-size: var(--font-size-base);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-secondary);
+}
+
+a {
+  color: var(--color-border);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--color-border-hover);
+  }
+}
+
+// Utility Classes
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+
+  @media (min-width: 768px) {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+
+  @media (min-width: 768px) {
+    padding: var(--spacing-2xl) 0;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+
+  &--2-cols {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  &--3-cols {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+.card {
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: var(--color-background-tertiary);
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-background-secondary);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--color-background-tertiary);
+    transform: translateY(-1px);
+    color: var(--color-primary); // Ensure text color stays the same on hover
+  }
+
+  &--primary {
+    background: var(--color-border);
+    color: white;
+    border-color: var(--color-border);
+
+    &:hover {
+      color: white; // Ensure white text stays white on hover
+    }
+  }
+}
+
+// Override anchor styles specifically for buttons
+a.btn {
+  color: var(--color-primary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-primary); // Override the global anchor hover color
+  }
+
+  &.btn--primary {
+    color: white;
+
+    &:hover {
+      color: white; // Keep white text for primary buttons
+    }
+  }
+}
+
+.text {
+  &--center {
+    text-align: center;
+  }
+  &--left {
+    text-align: left;
+  }
+  &--right {
+    text-align: right;
+  }
+
+  &--xs {
+    font-size: var(--font-size-xs);
+  }
+  &--sm {
+    font-size: var(--font-size-sm);
+  }
+  &--lg {
+    font-size: var(--font-size-lg);
+  }
+  &--xl {
+    font-size: var(--font-size-xl);
+  }
+
+  &--light {
+    color: var(--color-text-light);
+  }
+  &--secondary {
+    color: var(--color-secondary);
+  }
+  &--primary {
+    color: var(--color-primary);
+  }
+}
+
+// Responsive Design
+@media (max-width: 767px) {
+  :root {
+    --font-size-4xl: 1.875rem;
+    --font-size-3xl: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+  }
+}

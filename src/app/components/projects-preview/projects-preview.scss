@@ -1,0 +1,106 @@
+// Projects Preview Component Styles
+
+.projects-preview {
+  margin-top: var(--spacing-lg);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+.project-card {
+  background: var(--beige-0);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--color-border);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.project-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative; // Add relative positioning for absolute positioning of button
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--beige-2), var(--beige-3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-secondary);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: opacity 0.3s ease;
+}
+
+.view-demo-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.2s ease;
+  z-index: 2;
+
+  &:hover {
+    transform: translate(-50%, -50%) translateY(-1px);
+  }
+}
+
+// Hover effects for the card
+.project-card:hover {
+  .placeholder-image {
+    opacity: 0.3; // Dim the title on hover
+  }
+
+  .view-demo-btn {
+    opacity: 1; // Show the button on hover
+  }
+}
+
+.project-content {
+  padding: var(--spacing-md);
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.project-description {
+  color: var(--color-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.tech-tag {
+  background: var(--beige-2);
+  color: var(--color-secondary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}

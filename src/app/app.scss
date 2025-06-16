@@ -1,0 +1,17 @@
+// App Component Styles
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  // Remove padding-top so content flows behind translucent header
+  // This is essential for the glassy effect to be visible
+
+  @media (max-width: 1069px) {
+    // padding-top: 80px; // Only add padding on smaller screens where header is solid
+  }
+}

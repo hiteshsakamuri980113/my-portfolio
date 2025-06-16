@@ -1,0 +1,30 @@
+// Footer Component Styles
+
+.footer {
+  background: var(--color-background);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-lg) 0;
+}
+
+.footer-bottom {
+  text-align: center;
+
+  p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    // Style the heart SVG icon
+    .heart {
+      color: #c6ba93;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}

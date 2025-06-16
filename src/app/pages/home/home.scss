@@ -1,0 +1,14 @@
+// Home Page Styles
+
+.home {
+  min-height: calc(100vh - 60px);
+}
+
+.projects-preview {
+  background: var(--beige-1);
+}
+
+.text-center {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+}

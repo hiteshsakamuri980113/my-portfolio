@@ -1,0 +1,24 @@
+<!-- Home Page - Landing Page -->
+<div class="home">
+  <app-hero></app-hero>
+
+  <!-- Brief Projects Section -->
+  <section class="projects-preview section">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-description">
+        Here are some of my recent projects that showcase my skills and
+        experience.
+      </p>
+      <app-projects-preview></app-projects-preview>
+      <div class="text-center">
+        <button type="button" class="btn" (click)="navigateToProjects()">
+          View All Projects
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <app-contact></app-contact>
+</div>
